@@ -6,15 +6,25 @@
 Dependency Manager:
 PHP Composer https://getcomposer.org/download/
 
+
 Create new mysql database then create tables:
 
-1. students '(siswa)'
+1. students / siswa
+        Strucure:
+        nis PK, nama, kode_kelas FK 
 
+2. teachers / guru
+        Strucure:
+        kode_guru PK, nama_guru
 
-2. teachers (guru)
+3. classes / kelas
+        Strucure:
+        kode_kelas PK, nama_kelas
 
-3. classes (kelas)
+4. subjects / mapel
+        Strucure:
+        kode_mapel PK, nama_mapel, kode_guru FK
 
-4. subjects (mapel)
-
-5. scores (nilai)
+5. scores / nilai
+        Strucure:
+        kode_nilai PK AUTO_INCREMENT, nis FK, kode_mapel FK, kehadiran, tugas, formatif, uts, uas 
