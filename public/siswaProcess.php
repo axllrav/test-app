@@ -1,6 +1,7 @@
 <?php
 
 include 'navigation.php';
+require_once 'connect.php';
 
 //validation
 // 1. request-in
@@ -47,9 +48,9 @@ $nama = strip_tags($_POST['nama']);
 $kelas = strip_tags($_POST['kelas']);
 
 //menambah data baru untuk dimasukkan ke database/session 
-$siswa[] = ["nis" => $nis, "nama" => $nama, "kelas" => $kelas];
+$sql = "INSERT INTO students (nis, nama_siswa, kode_kelas) VALUES ('$nis', '$nama', '$kelas')";
 
-//kirim ke session
-$_SESSION['siswa'] = $siswa;
+//kirim ke db
+$result = $conn->query($sql);
 
 echo "Successfully added data <a href='index.php?menu=siswa'>See data</a>";

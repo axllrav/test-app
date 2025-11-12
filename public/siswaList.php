@@ -1,6 +1,9 @@
 <?php require_once "connect.php"; ?>
 
 <style>
+    table,a {
+        margin-left: 10px;
+    }
     table {
         font-family: Arial, Helvetica, sans-serif;
     }
