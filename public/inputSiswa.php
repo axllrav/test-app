@@ -6,7 +6,7 @@ require_once 'connect.php'; ?>
         <table>
             <tr>
                 <td>NIS</td>
-                <td><input name="nis" id="" placeholder="Masukkan NIS" required maxlength="9"></td>
+                <td><input name="nis" id="" placeholder="Masukkan NIS" required="required" maxlength="9"></td>
             </tr>
             <tr>
                 <td>Nama</td>
@@ -16,7 +16,7 @@ require_once 'connect.php'; ?>
                 <td>Kelas</td>
                 <td>
                     <select name="kelas" id="kelas">
-                        <option value="0">Pilih kelas..</option>
+                        <option value="0" disabled selected hidden>Pilih kelas..</option>
                         <?php
                         $sql = 'SELECT * FROM classes';
                         $result = $conn->query($sql);

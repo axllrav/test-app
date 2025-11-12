@@ -1,5 +1,6 @@
 <?php
 include "navigation.php";
+require_once 'connect.php';
 
 //validation
 // 1. request-in
@@ -39,10 +40,11 @@ if (!empty($errors)) {
 $kodgu = strip_tags($_POST['kodeGuru']);  //dilihat berdasarkan name di input
 $namgu = strip_tags($_POST['namaGuru']);
 
-$guru[] = ["kodeGuru" => $kodgu, "namaGuru" => $namgu]; 
+//menambah data baru untuk dimasukkan ke database/session 
+$sql = "INSERT INTO teachers (kode_guru, nama_guru) VALUES ('$kodgu', '$namgu')";
 
-//kirim ke session
-$_SESSION['guru'] = $guru;
+//kirim ke db
+$result = $conn->query($sql);
 
 echo "Successfully added data <a href='index.php?menu=guru'>See data</a>";
 

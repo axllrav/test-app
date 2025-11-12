@@ -15,10 +15,10 @@
                 <td>Guru</td>
                 <td>
                     <select name="kodeGuru" id="kodeGuru">
-                        <option value="-1">Pilih guru..</option>
+                        <option value="0" disabled selected hidden>Pilih guru..</option>
                         <?php
 
-                        $sql = 'SELECT * FROM subjects JOIN teachers ON teachers.kode_guru = subjects.kode_guru';
+                        $sql = 'SELECT * FROM teachers';
                         $result = $conn->query($sql);
                         while ($row = $result->fetch_assoc()) {
                             

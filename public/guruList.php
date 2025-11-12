@@ -1,3 +1,23 @@
+<?php require_once 'connect.php'; ?>
+<style>
+    table,a {
+        margin-left: 10px;
+    }
+    table {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    table .judul {
+        margin: 5px;
+        text-align: center;
+        background-color: peru;
+        font-size: 20px;
+    }
+
+    td {
+        padding: 3px;
+    }
+</style>
 <div>
     <table rules="all" border="">
         <thead>
@@ -9,20 +29,21 @@
         </thead>
         <tbody>
             <?php
-            if (isset($_SESSION['guru'])) {
-                $mapel = $_SESSION['guru'];
-
-                foreach ($mapel as $key => $items) {
+            $sql = 'SELECT * FROM teachers';
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                $no = 1;
+                while ($row = $result->fetch_assoc()) {
 
             ?>
                     <tr>
-                        <td><?= $key + 1 ?></td>
-                        <td><?= $items['kodeGuru'] ?></td>
-                        <td><?= $items['namaGuru'] ?></td>
-            <?php
+                        <td><?= $no++ ?></td>
+                        <td><?= $row['kode_guru'] ?></td>
+                        <td><?= $row['nama_guru'] ?></td>
+                <?php
                 }
             }
-            ?>
+                ?>
         </tbody>
     </table>
     <a href="inputGuru.php">Masukkan mapel baru</a>
