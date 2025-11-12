@@ -51,6 +51,10 @@ $kelas = strip_tags($_POST['kelas']);
 $sql = "INSERT INTO students (nis, nama_siswa, kode_kelas) VALUES ('$nis', '$nama', '$kelas')";
 
 //kirim ke db
-$result = $conn->query($sql);
+$exec = $conn->query($sql);
 
-echo "Successfully added data <a href='index.php?menu=siswa'>See data</a>";
+if ($exec) {
+    echo "Successfully added data <a href='index.php?menu=siswa'>See data</a>";
+} else {
+    die('Cannot proccessing! Error:' . $conn->error);
+}
