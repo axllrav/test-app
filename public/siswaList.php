@@ -1,13 +1,17 @@
+<?php require_once "connect.php"; ?>
+
 <style>
     table {
         font-family: Arial, Helvetica, sans-serif;
     }
+
     table .judul {
         margin: 5px;
         text-align: center;
         background-color: peru;
         font-size: 20px;
     }
+
     td {
         padding: 3px;
     }
@@ -18,29 +22,34 @@
             <tr class="judul">
                 <td width="10px">NO</td>
                 <td width="70px">NIS</td>
-                <td width="150px">Nama</td>
+                <td width="200px">Nama</td>
                 <td width="80px">Kelas</td>
             </tr>
         </thead>
         <tbody>
             <?php
-            if (isset($_SESSION['siswa'])) {
-                $siswa = $_SESSION['siswa'];
-
-                foreach ($siswa as $key => $items) {
+            $sql = 'SELECT * FROM students JOIN classes ON classes.kode_kelas = students.kode_kelas';
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                $no = 1;
+                while ($row = $result->fetch_assoc()) {
 
             ?>
                     <tr>
-                        <td align="center"><?= $key + 1 ?></td>
-                        <td><?= $items['nis'] ?></td>
-                        <td><?= $items['nama'] ?></td>
-                        <td align="center"><?= $items['kelas'] ?></td>
+                        <td><?= $no++ ?></td>
+                        <td><?= $row['nis'] ?></td>
+                        <td><?= $row['nama_siswa'] ?></td>
+                        <td><?= $row['nama_kelas'] ?></td>
                     </tr>
-            <?php
+                <?php
                 }
-            }
-            ?>
+            } else {
+                ?>
+                <tr>
+                    <td colspan="4">Data kosong</td>
+                </tr>
+            <?php } ?>
         </tbody>
     </table>
-    <a href="inputSiswa.php">Masukkan data siswa</a>
+    <br><a href="inputSiswa.php">Masukkan data siswa</a>
 </div>
