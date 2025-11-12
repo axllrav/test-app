@@ -5,3 +5,16 @@
 
 Dependency Manager:
 PHP Composer https://getcomposer.org/download/
+
+Create new mysql database then create tables:
+
+1. students '(siswa)'
+
+
+2. teachers (guru)
+
+3. classes (kelas)
+
+4. subjects (mapel)
+
+5. scores (nilai)
