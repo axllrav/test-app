@@ -3,7 +3,7 @@
 Latest updates of project app from XI-RPL3 
 **WEB DEVELOPMENT** Subject.
 
-> 💬 Next katanya mau pakai **Bootstrap**, tapi udh pada pekael
+> Next katanya mau pakai **Bootstrap**, tapi udh pada pekael
 
 ---
 
@@ -38,8 +38,8 @@ Latest updates of project app from XI-RPL3
 ### 🏫 `classes`
 | Column | Type | Key | Description |
 |---------|------|-----|-------------|
-| `kode_kelas` | VARCHAR(10) | PK | Kode kelas |
-| `nama_kelas` | VARCHAR(100) |  | Nama kelas |
+| `kode_kelas` | CHAR(5) | PK | Kode kelas |
+| `nama_kelas` | VARCHAR(15) |  | Nama kelas |
 
 ---
 
