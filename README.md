@@ -1,4 +1,4 @@
-Aplikasi Nilai Siswa
+# Aplikasi Nilai Siswa
 
-# Latest updates of project app from XI-RPL3 (WEB DEVELOPMENT Subject)
+## Latest updates of project app from XI-RPL3 (WEB DEVELOPMENT Subject)
 
