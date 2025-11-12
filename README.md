@@ -1,10 +1,9 @@
-# 🏫 Aplikasi Nilai Siswa
+# Aplikasi Nilai Siswa
 
-A simple **Student Grading App** built as a project by **XI-RPL3**  
-(📚 *Web Development Subject*).
+Latest updates of project app from XI-RPL3 
+**WEB DEVELOPMENT** Subject.
 
-> 💬 Next update katanya mau pakai **Bootstrap**,  
-> tapi kayaknya udah pada *pekael* 😆
+> 💬 Next katanya mau pakai **Bootstrap**, tapi udh pada pekael
 
 ---
 
