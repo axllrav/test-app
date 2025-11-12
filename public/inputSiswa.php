@@ -18,7 +18,7 @@ require_once 'connect.php'; ?>
                     <select name="kelas" id="kelas">
                         <option value="0">Pilih kelas..</option>
                         <?php
-                        $sql = 'SELECT * FROM students JOIN classes ON classes.kode_kelas = students.kode_kelas';
+                        $sql = 'SELECT * FROM classes';
                         $result = $conn->query($sql);
                         while ($row = $result->fetch_assoc()) {
                             echo "<option value='$row[kode_kelas]'>$row[nama_kelas]</option>";

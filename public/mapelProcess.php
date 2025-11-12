@@ -41,10 +41,11 @@ $nammp = strip_tags($_POST['namaMapel']);
 $kodeguru = strip_tags($_POST['kodeGuru']);
 
 
-$mapel[] = ["kodeMapel" => $kodmp, "namaMapel" => $nammp, "kodeGuru" => $kodeguru]; 
+//menambah data baru untuk dimasukkan ke database/session 
+$sql = "INSERT INTO subjects (kode_mapel, nama_mapel, kode_guru) VALUES ('$kodmp', '$nammp', '$kodeguru')";
 
-//kirim ke session
-$_SESSION['mapel'] = $mapel;
+//kirim ke db
+$result = $conn->query($sql);
 
 echo "Successfully added data <a href='index.php?menu=mapel'>See data</a>";
 

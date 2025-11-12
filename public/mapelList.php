@@ -1,3 +1,23 @@
+<?php require_once 'connect.php'; ?>
+<style>
+    table,a {
+        margin-left: 10px;
+    }
+    table {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    table .judul {
+        margin: 5px;
+        text-align: center;
+        background-color: peru;
+        font-size: 20px;
+    }
+
+    td {
+        padding: 3px;
+    }
+</style>
 <div>
     <table rules="all" border="">
         <thead>
@@ -10,27 +30,18 @@
         </thead>
         <tbody>
             <?php
-            if (isset($_SESSION['mapel'])) {
-                $mapel = $_SESSION['mapel'];
-
-                foreach ($mapel as $key => $items) {
+            $sql = 'SELECT * FROM subjects JOIN teachers ON teachers.kode_guru = subjects.kode_guru';
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                $no = 1;
+                while ($row = $result->fetch_assoc()) {
 
             ?>
                     <tr>
-                        <td><?= $key + 1 ?></td>
-                        <td><?= $items['kodeMapel'] ?></td>
-                        <td><?= $items['namaMapel'] ?></td>
-                        <td>
-                            <?php
-                            if (isset($_SESSION['guru'])) {
-                                foreach ($_SESSION['guru'] as $itemGuru) {
-                                    if ($itemGuru['kodeGuru'] == $items['kodeGuru']) {
-                                        echo $itemGuru['namaGuru'];
-                                    }
-                                }
-                            }
-                            ?>
-                        </td>
+                        <td><?= $no++ ?></td>
+                        <td><?= $row['kode_mapel'] ?></td>
+                        <td><?= $row['nama_mapel'] ?></td>
+                        <td><?= $row['nama_guru'] ?></td>
                     </tr>
             <?php
                 }

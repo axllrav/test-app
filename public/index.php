@@ -15,7 +15,7 @@
     <?php
     if (isset($_GET['menu'])) {
         if ($_GET['menu'] == 'all') {
-            include 'index__.php';
+            include 'nilaiList.php';
         } elseif ($_GET['menu'] == 'siswa') {
             include 'siswaList.php';
         } elseif ($_GET['menu'] == 'mapel') {
